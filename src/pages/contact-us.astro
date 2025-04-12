@@ -1,0 +1,390 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactImage from '../assets/Contact Us Image.jpg';
+---
+
+<Layout>
+	<Header />
+	<main>
+		<section class="contact-section">
+			<div class="container">
+				<div class="contact-grid">
+					<div class="contact-info">
+						<h1 class="slide-up">Contact Us</h1>
+						
+						<p class="description slide-up stagger-1">Have questions or need support? We're here to help! Reach out to us anytime.</p>
+						
+						<div class="contact-details slide-up stagger-2">
+							<div class="contact-detail">
+								<span class="label">Email:</span>
+								<span class="value">support@theonlyfitnessapp.com</span>
+							</div>
+							
+							<div class="contact-detail">
+								<span class="label">Phone:</span>
+								<span class="value">+1 (123) 456-7890</span>
+							</div>
+							
+							<div class="contact-detail">
+								<span class="label">Address:</span>
+								<span class="value">123 Fitness Lane, Wellness City, Fitland 56789</span>
+							</div>
+						</div>
+						
+						<div class="social-links slide-up stagger-3">
+							<span class="follow-us">Follow Us:</span>
+							<a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+							<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+							<a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+						</div>
+						
+						<div class="chatbot-info slide-up stagger-4">
+							<span class="need-help">Need help now?</span> <a href="https://www.theonlyfitnessapp.com">Chat with our personal fitness chatbot in the app!</a>
+						</div>
+						
+						<form class="contact-form slide-up stagger-5">
+							<div class="name-fields">
+								<div class="form-group">
+									<label for="first-name">First Name</label>
+									<input type="text" id="first-name" name="first-name" placeholder="" required>
+								</div>
+								<div class="form-group">
+									<label for="last-name">Last Name</label>
+									<input type="text" id="last-name" name="last-name" placeholder="" required>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="email">Email <span class="required-label">(required)</span></label>
+								<input type="email" id="email" name="email" placeholder="" required>
+							</div>
+							
+							<div class="form-group">
+								<label for="message">Message <span class="required-label">(required)</span></label>
+								<textarea id="message" name="message" rows="6" placeholder="" required></textarea>
+							</div>
+							
+							<button type="submit" class="btn-primary">Submit</button>
+						</form>
+					</div>
+					
+					<div class="image-container">
+						<img src={ContactImage.src} alt="Fitness training support" class="contact-image">
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		margin-top: 80px; /* Accommodate for fixed header */
+		background-color: #f8fafc;
+	}
+
+	.container {
+		width: 100%;
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.contact-section {
+		padding: 4rem 0 6rem;
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 0.8fr 1.2fr;
+		gap: 3rem;
+		align-items: start;
+	}
+
+	.contact-info {
+		padding-right: 2rem;
+	}
+
+	h1 {
+		font-size: 3.5rem;
+		font-weight: 700;
+		margin-bottom: 1.5rem;
+		color: #1a1a1a;
+		line-height: 1.1;
+	}
+
+	.description {
+		font-size: 1.15rem;
+		color: #333;
+		line-height: 1.6;
+		margin-bottom: 2.5rem;
+	}
+
+	.contact-details {
+		margin-bottom: 2.5rem;
+	}
+
+	.contact-detail {
+		margin-bottom: 1rem;
+	}
+
+	.label {
+		font-weight: 600;
+		color: #333;
+		display: block;
+		margin-bottom: 0.25rem;
+	}
+
+	.value {
+		color: #555;
+		display: block;
+	}
+
+	.social-links {
+		margin-bottom: 2.5rem;
+	}
+
+	.follow-us {
+		font-weight: 600;
+		color: #333;
+		margin-right: 1rem;
+	}
+
+	.social-links a {
+		color: #555;
+		text-decoration: none;
+		margin-right: 1rem;
+		position: relative;
+	}
+
+	.social-links a:after {
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background-color: #333;
+		transition: width 0.3s ease;
+	}
+
+	.social-links a:hover {
+		color: #333;
+	}
+
+	.social-links a:hover:after {
+		width: 100%;
+	}
+
+	.chatbot-info {
+		margin-bottom: 2.5rem;
+		color: #555;
+	}
+
+	.need-help {
+		font-weight: 600;
+		color: #333;
+	}
+
+	.chatbot-info a {
+		color: #333;
+		text-decoration: none;
+		font-weight: 500;
+		position: relative;
+	}
+
+	.chatbot-info a:after {
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: #333;
+		transition: width 0.3s ease;
+	}
+
+	.chatbot-info a:hover {
+		color: #111;
+	}
+
+	.contact-form {
+		margin-top: 2rem;
+	}
+
+	.name-fields {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+		color: #333;
+	}
+
+	.required-label {
+		font-weight: 400;
+		color: #666;
+		font-size: 0.9rem;
+	}
+
+	input, textarea {
+		width: 100%;
+		padding: 0.75rem;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		font-family: 'Inter', sans-serif;
+		font-size: 1rem;
+		background-color: #fff;
+		transition: border-color 0.3s ease;
+	}
+
+	input:focus, textarea:focus {
+		outline: none;
+		border-color: #555;
+	}
+
+	textarea {
+		resize: vertical;
+		min-height: 120px;
+	}
+
+	.btn-primary {
+		background-color: #333;
+		color: white;
+		border: none;
+		padding: 0.85rem 2rem;
+		border-radius: 4px;
+		font-weight: 600;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	.btn-primary:hover {
+		background-color: #111;
+	}
+
+	.image-container {
+		background-color: #f0f0f0;
+		border-radius: 8px;
+		overflow: hidden;
+		min-height: 750px;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	.contact-image {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		display: block;
+		transition: transform 0.5s ease;
+	}
+
+	.image-container:hover .contact-image {
+		transform: scale(1.03);
+	}
+
+	/* Animation classes */
+	.slide-up {
+		opacity: 1;
+	}
+
+	body.js-enabled .slide-up {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	/* Stagger delays */
+	.section-animate .stagger-1 {
+		animation-delay: 0.1s;
+	}
+
+	.section-animate .stagger-2 {
+		animation-delay: 0.2s;
+	}
+
+	.section-animate .stagger-3 {
+		animation-delay: 0.3s;
+	}
+
+	.section-animate .stagger-4 {
+		animation-delay: 0.4s;
+	}
+
+	.section-animate .stagger-5 {
+		animation-delay: 0.5s;
+	}
+
+	.section-animate .slide-up {
+		animation: slideUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+	}
+
+	@keyframes slideUp {
+		0% {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Responsive adjustments */
+	@media (max-width: 1100px) {
+		.contact-grid {
+			gap: 2rem;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.contact-info {
+			padding-right: 0;
+		}
+
+		h1 {
+			font-size: 3rem;
+		}
+
+		.image-container {
+			min-height: 600px;
+			order: -1;
+			margin-bottom: 2rem;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.name-fields {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		h1 {
+			font-size: 2.5rem;
+		}
+
+		.contact-section {
+			padding: 3rem 0 4rem;
+		}
+	}
+</style> 

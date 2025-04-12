@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="The Only Fitness App you'll ever need for your workout and health journey" />
+		<title>The Only Fitness App</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<script>
+			// Add js-enabled class immediately to prevent flash of unstyled content
+			document.body.classList.add('js-enabled');
+			
+			// Once page is loaded, set up scroll animations
+			window.addEventListener('load', function() {
+				// Create intersection observer for section animations
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							// Add section-animate class to the section
+							entry.target.classList.add('section-animate');
+							
+							// Also trigger the body animate-ready class to ensure all animations work
+							document.body.classList.add('animate-ready');
+							
+							// Don't unobserve so animations can play again if user scrolls away and back
+						}
+					});
+				}, { 
+					threshold: 0.1,
+					rootMargin: '0px 0px -10% 0px' // Trigger slightly before the section is fully visible
+				});
+				
+				// Observe all sections
+				document.querySelectorAll('section').forEach(section => {
+					observer.observe(section);
+				});
+				
+				// Add animate-ready class to body immediately for hero section
+				document.body.classList.add('animate-ready');
+			});
+		</script>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		font-family: 'Inter', sans-serif;
+	}
+
+	:root {
+		--primary: #3b82f6;
+		--primary-dark: #2563eb;
+		--secondary: #6366f1;
+		--dark: #1e293b;
+		--light: #f8fafc;
+		--gray: #64748b;
+	}
+
+	/* Animation classes */
+	.fade-in {
+		opacity: 0;
+	}
+
+	.slide-up {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	/* Only apply animations after body gets the animate-ready class */
+	body.animate-ready .fade-in {
+		animation: fadeIn 1.2s ease-out forwards;
+	}
+
+	body.animate-ready .slide-up {
+		animation: slideUp 1.2s ease-out forwards;
+	}
+
+	body.animate-ready .stagger-1 {
+		animation-delay: 0.2s;
+	}
+
+	body.animate-ready .stagger-2 {
+		animation-delay: 0.4s;
+	}
+
+	body.animate-ready .stagger-3 {
+		animation-delay: 0.6s;
+	}
+
+	body.animate-ready .stagger-4 {
+		animation-delay: 0.8s;
+	}
+
+	/* Animation keyframes */
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes slideUp {
+		from {
+			opacity: 0;
+			transform: translateY(50px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

@@ -1,0 +1,231 @@
+---
+import appPreview from '../assets/Preview of TOFA APP.png';
+---
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title slide-up">Ready to Start Your Fitness Journey?</h2>
+      <p class="cta-text slide-up stagger-1">Download the app today and take the first step towards a healthier, stronger you.</p>
+      <div class="app-buttons slide-up stagger-2">
+        <a href="#" class="app-btn app-store">
+          <div class="app-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          </div>
+          <div class="app-text">
+            <span class="app-small">Download on the</span>
+            <span class="app-large">App Store</span>
+          </div>
+        </a>
+        <a href="#" class="app-btn google-play">
+          <div class="app-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          </div>
+          <div class="app-text">
+            <span class="app-small">GET IT ON</span>
+            <span class="app-large">Google Play</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="app-preview slide-up stagger-3">
+      <img src={appPreview.src} alt="The Only Fitness App on mobile devices" class="preview-img" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    padding: 6rem 0;
+    background: linear-gradient(120deg, #333333 0%, #555555 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='60' viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M95 30 H80 V25 H70 V35 H80 V30 H95 M5 30 H20 V25 H30 V35 H20 V30 H5' stroke='%23ffffff' stroke-width='3' fill='none' fill-opacity='0.05' stroke-opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 150px;
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .cta-content {
+    flex: 1;
+  }
+
+  .cta-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    background: linear-gradient(90deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cta-text {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    color: #ffffff;
+    max-width: 500px;
+  }
+
+  .app-buttons {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .app-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.875rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .app-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .app-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app-small {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-bottom: 0.2rem;
+  }
+
+  .app-large {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .app-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.25));
+  }
+
+  .preview-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+  }
+
+  .app-preview:hover .preview-img {
+    transform: translateY(-10px);
+  }
+
+  @media (max-width: 900px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .app-buttons {
+      justify-content: center;
+    }
+
+    .cta-title {
+      font-size: 2.5rem;
+    }
+    
+    .cta-text {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .app-preview {
+      margin-top: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .app-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  /* Scroll-triggered animations for CTA section */
+  .cta-title.slide-up,
+  .cta-text.slide-up, 
+  .app-buttons.slide-up, 
+  .app-preview.slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  /* Only animate when section becomes visible on scroll */
+  .section-animate .cta-title.slide-up {
+    animation: ctaSlideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.1s;
+  }
+
+  .section-animate .cta-text.slide-up {
+    animation: ctaSlideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.3s;
+  }
+
+  .section-animate .app-buttons.slide-up {
+    animation: ctaSlideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.5s;
+  }
+
+  .section-animate .app-preview.slide-up {
+    animation: ctaSlideUp 1.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes ctaSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    30% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style> 

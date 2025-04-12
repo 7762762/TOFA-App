@@ -1,0 +1,239 @@
+<section class="features">
+  <div class="container">
+    <div class="section-header">
+      <span class="subtitle slide-up">CORE FEATURES</span>
+      <h2 class="slide-up stagger-1">Everything You Need, Nothing You Don't</h2>
+      <p class="slide-up stagger-2">Our app focuses on what matters most for your fitness journey, delivering essential features with none of the bloat.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card slide-up stagger-1">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+        </div>
+        <h3 class="card-title">Personalized Workouts</h3>
+        <p class="card-desc">Custom workout plans tailored to your fitness level, goals, and available equipment.</p>
+      </div>
+
+      <div class="feature-card slide-up stagger-2">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+        </div>
+        <h3 class="card-title">Nutrition Tracking</h3>
+        <p class="card-desc">Easy-to-use meal planning and nutrition tracking to fuel your workouts and reach your goals.</p>
+      </div>
+
+      <div class="feature-card slide-up stagger-3">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20V4"></path></svg>
+        </div>
+        <h3 class="card-title">Progress Tracking</h3>
+        <p class="card-desc">Monitor your fitness journey with detailed metrics, graphs, and milestones.</p>
+      </div>
+
+      <div class="feature-card slide-up stagger-4">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+        <h3 class="card-title">Personalized AI Chat Bot</h3>
+        <p class="card-desc">Get instant help with workout techniques, nutrition advice, and fitness plans from our intelligent AI assistant that learns your preferences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 6rem 0;
+    background-color: var(--light);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .subtitle {
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover .icon {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(59, 130, 246, 0.2);
+  }
+
+  .icon svg {
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover .icon svg {
+    transform: scale(1.1);
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+
+  .card-desc {
+    color: var(--gray);
+    line-height: 1.6;
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover .card-title {
+    transform: translateY(-2px);
+    color: var(--primary);
+  }
+
+  .feature-card:hover .card-desc {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  /* Special features section animations */
+  .subtitle.slide-up,
+  h2.slide-up,
+  .section-header p.slide-up,
+  .feature-card.slide-up {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  /* Only animate when section becomes visible on scroll */
+  .section-animate .subtitle.slide-up {
+    animation: featuresSlideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.1s;
+  }
+
+  .section-animate h2.slide-up {
+    animation: featuresSlideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.2s;
+  }
+
+  .section-animate .section-header p.slide-up {
+    animation: featuresSlideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.3s;
+  }
+
+  .section-animate .feature-card.slide-up {
+    animation: featuresSlideUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  }
+
+  @keyframes featuresSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    30% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Custom stagger delays for feature cards */
+  .section-animate .feature-card.stagger-1 {
+    animation-delay: 0.5s;
+  }
+
+  .section-animate .feature-card.stagger-2 {
+    animation-delay: 0.65s;
+  }
+
+  .section-animate .feature-card.stagger-3 {
+    animation-delay: 0.8s;
+  }
+
+  .section-animate .feature-card.stagger-4 {
+    animation-delay: 0.95s;
+  }
+
+  .feature-card h3,
+  .feature-card p {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition-delay: 0.1s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-card:hover h3,
+  .feature-card:hover p {
+    transform: translateY(-3px);
+  }
+</style> 
