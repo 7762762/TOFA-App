@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Get the name from URL parameters if available
+const name = Astro.url.searchParams.get('name');
+const hasName = !!name;
+---
+
+<Layout>
+	<Header />
+	<main>
+		<section class="thank-you-section">
+			<div class="container">
+				<div class="thank-you-content">
+					<h1 class="slide-up">Thank You{hasName && `, ${name}`}!</h1>
+					<p class="slide-up stagger-1">Your message has been sent successfully. We'll get back to you as soon as possible.</p>
+					<div class="buttons slide-up stagger-2">
+						<a href="/" class="btn-primary">Return to Home</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<script>
+	// Add js-enabled class to body as soon as JS loads
+	document.body.classList.add('js-enabled');
+	
+	// Add animation classes after a small delay
+	window.addEventListener('DOMContentLoaded', () => {
+		// First add animate-ready to body for initial animations
+		setTimeout(() => {
+			document.body.classList.add('animate-ready');
+		}, 100);
+		
+		// Then add section-animate to the thank-you section
+		const section = document.querySelector('.thank-you-section');
+		if (section) {
+			setTimeout(() => {
+				section.classList.add('section-animate');
+			}, 200);
+		}
+	});
+</script>
+
+<style>
+	main {
+		margin-top: 80px; /* Accommodate for fixed header */
+		background-color: #f8fafc;
+	}
+
+	.container {
+		width: 100%;
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.thank-you-section {
+		padding: 8rem 0;
+		text-align: center;
+	}
+
+	.thank-you-content {
+		background-color: white;
+		padding: 4rem;
+		border-radius: 8px;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	h1 {
+		font-size: 3.5rem;
+		font-weight: 700;
+		margin-bottom: 1.5rem;
+		color: #1a1a1a;
+		line-height: 1.1;
+	}
+
+	p {
+		font-size: 1.25rem;
+		color: #333;
+		line-height: 1.6;
+		margin-bottom: 2.5rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.buttons {
+		margin-top: 2rem;
+	}
+
+	.btn-primary {
+		background-color: #333;
+		color: white;
+		border: none;
+		padding: 0.85rem 2rem;
+		border-radius: 4px;
+		font-weight: 600;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+		text-decoration: none;
+		display: inline-block;
+	}
+
+	.btn-primary:hover {
+		background-color: #111;
+	}
+
+	/* Animation styles for thank-you page */
+	body.js-enabled .slide-up {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	body.animate-ready .slide-up {
+		animation: thankYouSlideUp 0.8s ease-out forwards;
+	}
+
+	body.animate-ready .stagger-1 {
+		animation-delay: 0.2s;
+	}
+
+	body.animate-ready .stagger-2 {
+		animation-delay: 0.4s;
+	}
+
+	@keyframes thankYouSlideUp {
+		0% {
+			opacity: 0;
+			transform: translateY(50px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.thank-you-content {
+			padding: 3rem 2rem;
+		}
+
+		h1 {
+			font-size: 2.5rem;
+		}
+	}
+</style> 

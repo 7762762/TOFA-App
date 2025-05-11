@@ -3,6 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactImage from '../assets/Contact Us Image.jpg';
+
+// Check for success message in the URL
+const url = new URL(Astro.request.url);
+const success = url.searchParams.get('success');
+const error = url.searchParams.get('error');
 ---
 
 <Layout>
@@ -19,17 +24,7 @@ import ContactImage from '../assets/Contact Us Image.jpg';
 						<div class="contact-details slide-up stagger-2">
 							<div class="contact-detail">
 								<span class="label">Email:</span>
-								<span class="value">support@theonlyfitnessapp.com</span>
-							</div>
-							
-							<div class="contact-detail">
-								<span class="label">Phone:</span>
-								<span class="value">+1 (123) 456-7890</span>
-							</div>
-							
-							<div class="contact-detail">
-								<span class="label">Address:</span>
-								<span class="value">123 Fitness Lane, Wellness City, Fitland 56789</span>
+								<span class="value">ccthegymgeeks@gmail.com</span>
 							</div>
 						</div>
 						
@@ -41,32 +36,41 @@ import ContactImage from '../assets/Contact Us Image.jpg';
 						</div>
 						
 						<div class="chatbot-info slide-up stagger-4">
-							<span class="need-help">Need help now?</span> <a href="https://www.theonlyfitnessapp.com">Chat with our personal fitness chatbot in the app!</a>
+							<span class="need-help">Need help now?</span> <a href="https://www.thegymgeeks.com">Chat with our personal fitness chatbot in the app!</a>
 						</div>
 						
-						<form class="contact-form slide-up stagger-5">
+						{success && (
+							<div class="alert success slide-up">
+								<p>Thank you for your message! We'll get back to you soon.</p>
+							</div>
+						)}
+						
+						{error && (
+							<div class="alert error slide-up">
+								<p>Sorry, there was an error submitting your message. Please try again later or email us directly.</p>
+							</div>
+						)}
+						
+						<form id="contactForm" class="contact-form slide-up stagger-5">
 							<div class="name-fields">
 								<div class="form-group">
-									<label for="first-name">First Name</label>
-									<input type="text" id="first-name" name="first-name" placeholder="" required>
+									<label for="firstName">First Name</label>
+									<input type="text" id="firstName" name="first-name" placeholder="" required>
 								</div>
 								<div class="form-group">
-									<label for="last-name">Last Name</label>
-									<input type="text" id="last-name" name="last-name" placeholder="" required>
+									<label for="lastName">Last Name</label>
+									<input type="text" id="lastName" name="last-name" placeholder="" required>
 								</div>
 							</div>
-							
 							<div class="form-group">
 								<label for="email">Email <span class="required-label">(required)</span></label>
 								<input type="email" id="email" name="email" placeholder="" required>
 							</div>
-							
 							<div class="form-group">
 								<label for="message">Message <span class="required-label">(required)</span></label>
 								<textarea id="message" name="message" rows="6" placeholder="" required></textarea>
 							</div>
-							
-							<button type="submit" class="btn-primary">Submit</button>
+							<button type="submit" class="btn-primary">Send Message</button>
 						</form>
 					</div>
 					
@@ -79,6 +83,32 @@ import ContactImage from '../assets/Contact Us Image.jpg';
 	</main>
 	<Footer />
 </Layout>
+
+<script>
+  // Handle form submission using JavaScript
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const firstNameInput = form.querySelector('[name="first-name"]') as HTMLInputElement;
+      const lastNameInput = form.querySelector('[name="last-name"]') as HTMLInputElement;
+      const emailInput = form.querySelector('[name="email"]') as HTMLInputElement;
+      const messageInput = form.querySelector('[name="message"]') as HTMLTextAreaElement;
+      
+      const firstName = firstNameInput.value;
+      
+      try {
+        // Redirect to thank-you page with the name
+        window.location.href = `/thank-you?name=${encodeURIComponent(firstName)}`;
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        window.location.href = '/contact-us?error=true';
+      }
+    });
+  }
+</script>
 
 <style>
 	main {
