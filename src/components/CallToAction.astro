@@ -8,22 +8,12 @@ import appPreview from '../assets/Preview of TOFA APP.png';
       <h2 class="cta-title slide-up">Ready to Join The Gym Geeks?</h2>
       <p class="cta-text slide-up stagger-1">Connect with us today and take the first step towards a healthier, stronger you with personalized fitness guidance.</p>
       <div class="app-buttons slide-up stagger-2">
-        <a href="#" class="app-btn app-store">
+        <a href="https://www.theonlyfitnessapp.com" class="app-btn launch-btn" target="_blank" rel="noopener noreferrer">
           <div class="app-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </div>
           <div class="app-text">
-            <span class="app-small">Download on the</span>
-            <span class="app-large">App Store</span>
-          </div>
-        </a>
-        <a href="#" class="app-btn google-play">
-          <div class="app-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-          </div>
-          <div class="app-text">
-            <span class="app-small">GET IT ON</span>
-            <span class="app-large">Google Play</span>
+            <span class="app-large">Launch Web App Here</span>
           </div>
         </a>
       </div>
@@ -106,6 +96,16 @@ import appPreview from '../assets/Preview of TOFA APP.png';
     text-decoration: none;
     color: white;
     transition: all 0.3s ease;
+  }
+
+  .launch-btn {
+    background-color: var(--primary);
+    border: none;
+    padding: 1rem 2rem;
+  }
+
+  .launch-btn:hover {
+    background-color: var(--primary-dark);
   }
 
   .app-btn:hover {
